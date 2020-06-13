@@ -1,0 +1,61 @@
+body {
+  font-family: 'Spartan', sans-serif;
+}
+.toolbar {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+background-color: rgb(224, 253, 253);
+height: 56px;
+}
+
+.toolbar__navigation {
+  display:flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1 rem;
+
+}
+
+.toolbar__avatar {
+  margin-left: 1rem;
+}
+
+.toolbar__avatar a {
+  color: rgb(68, 68, 68);
+  text-decoration: none; 
+  font-size: 1.5rem;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.sage-img {
+  height: 10px;
+  width: 15px;
+}
+
+
+.toolbar_navigation-items ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.toolbar_navigation-items li {
+  padding: 0 0.5rem;
+}
+
+
+.toolbar_navigation-items a {
+  color: rgb(128, 128, 128);
+  text-decoration: none;
+}
+
+.toolbar_navigation-items a:hover,
+.toolbar_navigation-items a:active {
+  color: rgb(213, 215, 216);
+}
