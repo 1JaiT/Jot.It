@@ -56,19 +56,19 @@ height: 56px;
   color: rgb(213, 215, 216);
 }
 
-@media(max-width:768px) {
+/* @media(max-width:768px) {
   .toolbar_navigation-items {
-    display: none;
+    display: contents;
   }
-}
+} */
 
-@media (min-width: 769px) {
+/* @media (min-width: 769px) {
   .toolbar_toggle-button {
     display: none;
 
   }
   
-}
+} */
 
 .toolbar__avatar {
   margin-left: 0;

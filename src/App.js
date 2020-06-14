@@ -6,7 +6,6 @@ import TodoList from './Todolist/todolist';
 import AddTodo from './AddTodo/addTodo';
 import Backdrop from './components/Backdrop/Backdrop';
 
-
 class App extends Component {
   state = {
     sideDrawerOpen: false
