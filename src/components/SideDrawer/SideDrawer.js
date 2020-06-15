@@ -10,7 +10,7 @@ const sideDrawer = props => {
         return (
 
     <nav className={drawerClasses}>
-        <img src={logo} alt="mssage" />
+        <img className="avatar" src={logo} alt="mssage" />
         <ul>
             <li><a href="/">Today</a></li>
             <li><a href="/">This Week</a></li>

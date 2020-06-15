@@ -2,55 +2,16 @@ import React, { Component } from 'react';
 import Toolbar from './components/Toolbar/toolbar'
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import ToggleButton from './components/SideDrawer/ToggleButton';
-import TodoList from './Todolist/todolist';
+import TodoList from './Todolist/TodoList';
 import AddTodo from './AddTodo/addTodo';
 import Backdrop from './components/Backdrop/Backdrop';
 
 class App extends Component {
-  state = {
-    sideDrawerOpen: false
-  };
-  toggleButtonClickHandler =() => {
-    this.setState((prevState) => {
-      return {sideDrawerOpen: !prevState.sideDrawerOpen};
-    });
-  };
-
-  backdropClickHandler =() => {
-    this.setState({sideDrawerOpen: false});
-  };
-
-
-  render() {
-    
-    let backdrop;
-
-    if (this.state.sideDrawerOpen) {
-      backdrop = <Backdrop click={this.backdropClickHandler} />
-    }
-    return(
-    <div style={{height: '100%'}}>
-     <Toolbar drawerClickHandler={this.toggleButtonClickHandler} />
-     <SideDrawer show={this.state.sideDrawerOpen} />
-     {backdrop}
-
-     <ToggleButton />
-     
-     <main style={{marginTop: '64px'}}>Jot.It ..Just for Writers
-      <p>Say aloud: I am confident in my abilities to complete this 
-        project because I have all the tools I need within.</p>
-      <p>Take a moment to make a list of actions you can 
-         take to stay on track.</p> </main>
-
-     <AddTodo addTodoFn={this.addTodo}></AddTodo>
-     <TodoList updateTodoFn={this.updateTodo} todos={this.state.todos}></TodoList>
-    </div>)
-  }
-  
   constructor() {
     super();
     this.state = {
-      todos: []
+      todos: [],
+        sideDrawerOpen: false
     };
   }
   
@@ -88,5 +49,42 @@ updateTodo = async (todo) => {
   await this.setState({ todos: newTodos });
   localStorage.setItem('todos', JSON.stringify(this.state.todos));
 }
+  toggleButtonClickHandler =() => {
+    this.setState((prevState) => {
+      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    });
+  };
+
+  backdropClickHandler =() => {
+    this.setState({sideDrawerOpen: false});
+  };
+
+
+  render() {
+    
+    let backdrop;
+
+    if (this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />
+    }
+    return(
+    <div style={{height: '100%'}}>
+     <Toolbar drawerClickHandler={this.toggleButtonClickHandler} />
+     <SideDrawer show={this.state.sideDrawerOpen} />
+     {backdrop}
+
+     <ToggleButton />
+     
+     <main style={{marginTop: '64px'}}>Jot.It ..Just for Writers
+      <p>Say aloud: I am confident in my abilities to complete this 
+        project because I have all the tools I need within.</p>
+      <p>Take a moment to make a list of actions you can 
+         take to stay on track.</p> </main>
+
+     <AddTodo addTodoFn={this.addTodo}></AddTodo>
+     <TodoList updateTodoFn={this.updateTodo} todos={this.state.todos}></TodoList>
+    </div>)
+  }
+  
 }
 export default App;
