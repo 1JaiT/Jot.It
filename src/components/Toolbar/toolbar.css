@@ -42,7 +42,7 @@ height: 56px;
 }
 
 .toolbar_navigation-items li {
-  padding: 0 0.5rem;
+  padding: 0 0.6rem;
 }
 
 
@@ -62,14 +62,14 @@ height: 56px;
   }
 } */
 
-/* @media (min-width: 769px) {
+@media (min-width: 769px) {
   .toolbar_toggle-button {
     display: none;
 
   }
   
-} */
+}
 
 .toolbar__avatar {
-  margin-left: 0;
+  margin-left: 1;
 }
