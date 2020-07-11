@@ -5,8 +5,8 @@ import ToggleButton from './components/SideDrawer/ToggleButton';
 import TodoList from './Todolist/TodoList';
 import AddTodo from './AddTodo/addTodo';
 import Backdrop from './components/Backdrop/Backdrop';
-import Login from './Login/Login';
-import Register from './Login/Register'
+import  'styled-components';
+
 
 
 
@@ -64,15 +64,18 @@ updateTodo = async (todo) => {
     this.setState({sideDrawerOpen: false});
   };
 
+  
 
   render() {
     
     let backdrop;
+    
 
     if (this.state.sideDrawerOpen) {
       backdrop = <Backdrop click={this.backdropClickHandler} />
     }
     return(
+     <React.Fragment>
     <div style={{height: '100%'}}>
      <Toolbar drawerClickHandler={this.toggleButtonClickHandler} />
      <SideDrawer show={this.state.sideDrawerOpen} />
@@ -88,62 +91,28 @@ updateTodo = async (todo) => {
 
      <AddTodo addTodoFn={this.addTodo}></AddTodo>
      <TodoList updateTodoFn={this.updateTodo} todos={this.state.todos}></TodoList>
-    </div>)
-  }
-  
-  
-changeState() {
-    const { isLogginActive } = this.state;
-    if(isLogginActive) {
-        this.rightSide.classList.remove("right");
-        this.rightSide.classList.add("left");
-    } else {
-        this.rightSide.classList.remove("left");
-        this.rightSide.classList.add("right");
-    }
-    this.setState((prevState) => ({ isLogginActive: !prevState.isLogginActive }));
-}
+    </div>
 
-    render() {
-        const { isLogginActive } = this.state;
-        const current = isLogginActive ? "Regiser" : "Login";
-        const currentActive = isLogginActive ? "Login" : "Register";
-        return(
-            <div className="App">
-            <div className="login">
-              <div className="container" ref={ref => (this.container = ref)}>
-                {isLogginActive && (
-                  <Login containerRef={ref => (this.current = ref)} />
-                )}
-                {!isLogginActive && (
-                  <Register containerRef={ref => (this.current = ref)} />
-                )}
-              </div>
-              <RightSide
-                current={current}
-                currentActive={currentActive}
-                containerRef={ref => (this.rightSide = ref)}
-                onClick={this.changeState.bind(this)}
-              />
-            </div>
-          </div>
+    
+            
+                </React.Fragment>
         );
       }
     }
     
-    const RightSide = props => {
-      return (
-        <div
-          className="right-side"
-          ref={props.containerRef}
-          onClick={props.onClick}
-        >
-          <div className="inner-container">
-            <div className="text">{props.current}</div>
-          </div>
-        </div>
-      );
-    };
+    // const RightSide = props => {
+    //   return (
+    //     <div
+    //       className="right-side"
+    //       ref={props.containerRef}
+    //       onClick={props.onClick}
+    //     >
+    //       <div className="inner-container">
+    //         <button className="text">{props.current}</button>
+    //       </div>
+    //     </div>
+    //   );
+    // };
     
 
 

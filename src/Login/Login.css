@@ -53,6 +53,10 @@ input {
 	background-color: rgb(255, 255, 255);
 	box-shadow: 0px 0px 14px 0.3px rgba(250, 181, 221, 0.588);	
 }
+
+.button {
+	align-items: center;
+}
   
 .focus {
 	outline: none;

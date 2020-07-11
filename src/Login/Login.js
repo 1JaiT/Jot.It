@@ -5,9 +5,7 @@ import './Login.css';
 
 class Login extends React.Component {
     
-    constructor(props) {
-        super(props);
-    }
+    
 
 
 render() {
@@ -29,8 +27,7 @@ render() {
             </div>
         </div>
         </div>
-        <div className="footer">
-            <button type="button" className="btn">Login</button></div>
+       
         </div>     
     ); 
     }
