@@ -1,12 +1,38 @@
 import React, { Component } from 'react';
-import Toolbar from './components/Toolbar/toolbar'
+import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import ToggleButton from './components/SideDrawer/ToggleButton';
-import TodoList from './Todolist/TodoList';
-import AddTodo from './AddTodo/addTodo';
+import TodoList from './TodoList/TodoList';
+import AddTodoButton from './AddTodoButton/AddTodoButton';
 import Backdrop from './components/Backdrop/Backdrop';
-import  'styled-components';
+import styled from 'styled-components';
 
+const Container = styled.div`
+width: 250px;
+margin:10px auto;
+font-family: Spartan', sans-serif;
+font-size 13px`
+
+// const App = () => (
+//   <Container>
+//   <div>
+//     <Todo />
+//   </div>
+//   </Container>
+// )
+
+// render(<App />, document.getElementById('app'))
+
+// class App extends Component {
+
+  // render() {
+  //   return (
+  //     <div className="container">
+  //       <h1 className="text-center">ToDo App in ReactJS</h1>
+  //       <Todos />
+  //     </div>
+  //   );
+  // }
 
 
 
@@ -20,46 +46,7 @@ class App extends Component {
   }
   
 
-    
-  componentDidMount = () => {
-    const todos = localStorage.getItem('todos');
-    if(todos) {
-      const savedTodos = JSON.parse(todos);
-      this.setState({ todos: savedTodos });
-    } else {
-      console.log('No todos');
-    }
-  }
-
-
-addTodo =  async (todo) => {
-  await this.setState({todos: [...this.state.todos, {
-  text: todo,
-  completed: false
-}] });
-  localStorage.setItem('todos', JSON.stringify(this.state.todos));
-  console.log(localStorage.getItem('todos'));
-}
-
-updateTodo = async (todo) => {
- const newTodos = this.state.todos.map(_todo => {
-    if(todo === _todo)
-    return {
-      text: todo.text,
-      completed: !todo.completed
-    }
-    else
-      return _todo
-  });
-  await this.setState({ todos: newTodos });
-  localStorage.setItem('todos', JSON.stringify(this.state.todos));
-}
-  toggleButtonClickHandler =() => {
-    this.setState((prevState) => {
-      return {sideDrawerOpen: !prevState.sideDrawerOpen};
-    });
-  };
-
+  
   backdropClickHandler =() => {
     this.setState({sideDrawerOpen: false});
   };
@@ -75,12 +62,12 @@ updateTodo = async (todo) => {
       backdrop = <Backdrop click={this.backdropClickHandler} />
     }
     return(
-     <React.Fragment>
+      
+     <Container>
     <div style={{height: '100%'}}>
      <Toolbar drawerClickHandler={this.toggleButtonClickHandler} />
      <SideDrawer show={this.state.sideDrawerOpen} />
      {backdrop}
-
      <ToggleButton /> 
      
      <main style={{marginTop: '64px'}}>Jot.It ..Just for Writers
@@ -89,30 +76,18 @@ updateTodo = async (todo) => {
       <p>Take a moment to make a list of actions you can 
          take to stay on track.</p> </main>
 
-     <AddTodo addTodoFn={this.addTodo}></AddTodo>
-     <TodoList updateTodoFn={this.updateTodo} todos={this.state.todos}></TodoList>
+     <AddTodoButton addTodoFn={this.addTodo}></AddTodoButton>
+     <TodoList updateTodoFn={this.updateTodos} todos={this.state.todos}></TodoList>
     </div>
 
     
             
-                </React.Fragment>
+    </Container>
         );
       }
     }
     
-    // const RightSide = props => {
-    //   return (
-    //     <div
-    //       className="right-side"
-    //       ref={props.containerRef}
-    //       onClick={props.onClick}
-    //     >
-    //       <div className="inner-container">
-    //         <button className="text">{props.current}</button>
-    //       </div>
-    //     </div>
-    //   );
-    // };
+  
     
 
 

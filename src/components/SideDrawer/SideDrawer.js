@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './mssage.png'
 import './SideDrawer.css';
 
-const sideDrawer = props => {
+const SideDrawer = props => {
         let drawerClasses = 'side-drawer';
         if(props.show) {
             drawerClasses = 'side-drawer open';
@@ -22,4 +22,4 @@ const sideDrawer = props => {
     );
 };
 
-export default sideDrawer; 
+export default SideDrawer; 

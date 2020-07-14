@@ -4,7 +4,7 @@ import ToggleButton from '../SideDrawer/ToggleButton';
 
 import './toolbar.css';
 
-const toolbar = props => (
+const Toolbar = props => (
   <header className="toolbar">
     <nav className="toolbar__navigation">
       <div className="toolbar_toggle-button">
@@ -25,6 +25,6 @@ const toolbar = props => (
   </header>
 );
 
-export default toolbar;
+export default Toolbar;
 
     
