@@ -8,7 +8,7 @@ const Toolbar = props => (
   <header className="toolbar">
     <nav className="toolbar__navigation">
       <div className="toolbar_toggle-button">
-        <ToggleButton click={props.drawerClickHandler} />
+        <ToggleButton click={props.sideDrawer} />
       </div>
       <div className="toolbar__avatar"><a href="/todos">Jot.It</a></div>
       <div className="spacer" />

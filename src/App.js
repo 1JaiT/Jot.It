@@ -3,36 +3,38 @@ import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import ToggleButton from './components/SideDrawer/ToggleButton';
 import TodoList from './TodoList/TodoList';
+import TodoDetail from './TodoItem/TodoDetail';
 import AddTodoButton from './AddTodoButton/AddTodoButton';
 import Backdrop from './components/Backdrop/Backdrop';
 import styled from 'styled-components';
 
 const Container = styled.div`
-width: 250px;
-margin:10px auto;
+text-align: center;
+width: 325px;
+margin:12px auto;
 font-family: Spartan', sans-serif;
 font-size 13px`
 
 // const App = () => (
 //   <Container>
 //   <div>
-//     <Todo />
+//     <Backdrop />
 //   </div>
 //   </Container>
 // )
 
 // render(<App />, document.getElementById('app'))
 
-// class App extends Component {
+// // class App extends Component {
 
-  // render() {
-  //   return (
-  //     <div className="container">
-  //       <h1 className="text-center">ToDo App in ReactJS</h1>
-  //       <Todos />
-  //     </div>
-  //   );
-  // }
+//   // render() {
+//   //   return (
+//   //     <div className="container">
+//   //       <h1 className="text-center">ToDo App in ReactJS</h1>
+//   //       <Todos />
+//   //     </div>
+//   //   );
+//   // }
 
 
 
@@ -76,8 +78,9 @@ class App extends Component {
       <p>Take a moment to make a list of actions you can 
          take to stay on track.</p> </main>
 
-     <AddTodoButton addTodoFn={this.addTodo}></AddTodoButton>
-     <TodoList updateTodoFn={this.updateTodos} todos={this.state.todos}></TodoList>
+     <AddTodoButton />
+     <TodoList />
+     <TodoDetail />
     </div>
 
     

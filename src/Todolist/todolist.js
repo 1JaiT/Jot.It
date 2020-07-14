@@ -9,7 +9,7 @@ const StyledList = styled.li`
     margin-bottom: 10px
 `
 const StyledLabel = styled.label`
-    float: left;
+    float: cen;
     cursor: pointer
 `
 const StyledButton = styled.button`
@@ -68,72 +68,7 @@ class TodoList extends React.Component {
 
 // export default Todos
 
-// class Todos extends Component {
-
-//     //Component state with default values
-//     state = {
-//         addTodoValue: "",
-//         todos: [
-//             {
-//                 id: 1,
-//                 value: "",
-//                 isDone: false
-//             },
-//             {
-//                 id: 2,
-//                 value: "",
-//                 isDone: true
-//             },
-//             {
-//                 id: 3,
-//                 value: "",
-//                 isDone: false
-//             }
-//         ]
-//     }
-
-//     //Local helper method to get date
-//     getTime() {
-//         let d = new Date();
-//         var n = d.getTime();
-//         return n;
-//     }
-
-//     //method called from Todo component
-//     handleDelete = todo => {
-//         const todos = this.state.todos.filter((t) => {
-//             return t.id !== todo
-//         });
-//         this.setState({ todos });
-//     }
-
-//     handleDone = todo => {
-//         const todos = [...this.state.todos];
-//         todos.map((t) => {
-//             if (t.id === todo.id) {
-//                 t.isDone = !t.isDone;
-//             }
-//             return t;
-//         });
-//         this.setState({todos});
-//     }
-
-//     //method called from AddTodo component
-//     addNewTodo = value => {
-//         if (value) {
-//             const todos = [...this.state.todos];
-//             todos.push(
-//                 {
-//                     id: this.getTime(),
-//                     value: value,
-//                     isDone: false
-//                 }
-//             );
-//             this.setState({ addTodoValue: "", todos })
-//         } else {
-//             console.log("Please Add Todo Text");
-//         }
-//     }
+// 
 
 //     render() {
 //         return (

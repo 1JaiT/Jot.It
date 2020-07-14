@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledUl = styled.ul`
 padding: 0
 `
-const Todo = () => (
+const TodoItem = () => (
     <ul className="todo">
     <StyledUl>
         <Todos id="todo-1" title="" />
@@ -52,25 +52,25 @@ class TodoItem extends Component {
 
 
 
-// class TodoItem extends React.Component {
+class TodoItem extends React.Component {
 
-//     render() {
+    render() {
        
-//         const { todo } = this.props;
+        const { todo } = this.props;
 
-//         return(
-//             <div className={todo.completed ? ' completed' : '' }>
-//                 <div className={'todoItem'}>
-//             <input type="checkbox" checked={todo.completed} onClick={this.toggleTodo}/>
-//           <label>{todo.text}</label> 
-//           </div>
-//           </div>
+        return(
+            <div className={todo.completed ? ' completed' : '' }>
+                <div className={'todoItem'}>
+            <input type="checkbox" checked={todo.completed} onClick={this.toggleTodo}/>
+          <label>{todo.text}</label> 
+          </div>
+          </div>
 
-//         );
-//     }
-//    toggleTodo = () => {
-//     this.props.updateTodoFn(this.props.todo);
-//    } 
-// }
+        );
+    }
+   toggleTodo = () => {
+    this.props.updateTodoFn(this.props.todo);
+   } 
+}
 
 export default TodoItem;
