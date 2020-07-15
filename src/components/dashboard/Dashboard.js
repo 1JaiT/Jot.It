@@ -7,11 +7,14 @@ import RightSide from '../../Rightside/rightside';
 
 
 class Dashboard extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       todos: [],
-        sideDrawerOpen: false
+        sideDrawerOpen: false,
+        
+        history: []
+      
     };
   }
     changeState() {
@@ -29,8 +32,8 @@ render () {
 
   
   const { isLogginActive } = this.state;
-  const current = isLogginActive ? "Register" : "Login";
-  const currentActive = isLogginActive ? "Login" : "Register";
+  const current = isLogginActive ? "Register Here" : "Login Here";
+  const currentActive = isLogginActive ? "Login Here" : "Register Here";
   return (
     <React.Fragment>
     <Clock />

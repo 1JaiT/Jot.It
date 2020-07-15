@@ -56,7 +56,34 @@ class App extends Component {
   
 
   render() {
-    
+    // return(
+
+//     <div className="App">
+//             <Switch>
+//                 <Route exact path="/register">
+//                     <Register />
+//                     <Route exact path={["/", "/login"]}>
+//                         <Login />
+//                     </Route>
+//                     <Route path="/">
+//                         <LeftNav user={this.state.user} />
+//                         <div className="mainArea">
+//                             <Switch>
+//                                 <Route path="dashboard">
+//                                     <Dashboard />
+//                                 </Route>
+//                                 <Route path="todolist">
+//                                     <TodoList />
+//                                 </Route>
+//                             </Switch>
+//                         </div>
+//                     </Route>
+//                 </Route>
+//             </Switch>
+//         </div>
+//       );
+//   }
+// };
     let backdrop;
     
 
