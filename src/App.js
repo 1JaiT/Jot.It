@@ -80,6 +80,7 @@ updateTodo = async (todo) => {
      <Toolbar drawerClickHandler={this.toggleButtonClickHandler} />
      <SideDrawer show={this.state.sideDrawerOpen} />
      {backdrop}
+     
 
      <ToggleButton /> 
      

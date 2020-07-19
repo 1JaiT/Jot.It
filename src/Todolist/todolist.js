@@ -3,6 +3,7 @@ import TodoItem from '../TodoItem/todoitem';
 import 'styled-components';
 
 
+
 class TodoList extends Component {
   updateTodo = (todo) => {
       this.props.updateTodoFn(todo);
@@ -18,6 +19,7 @@ class TodoList extends Component {
                 )
             })
         }
+        
     </div>
     );
 }
