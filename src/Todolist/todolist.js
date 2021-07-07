@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import TodoItem from '../TodoItem/todoitem';
+import 'styled-components';
 
 
-class TodoList extends React.Component {
+class TodoList extends Component {
+  updateTodo = (todo) => {
+      this.props.updateTodoFn(todo);
+  }
 
     render() {
         const { todos } =this.props;
@@ -18,9 +22,6 @@ class TodoList extends React.Component {
     );
 }
 
-updateTodo = (todo) => {
-    this.props.updateTodoFn(todo);
-}
     
 }
 
