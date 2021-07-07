@@ -1,0 +1,7 @@
+.secnav {
+    display:flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 1 rem;
+  
+}
