@@ -4,13 +4,13 @@ import ToggleButton from '../SideDrawer/ToggleButton';
 
 import './toolbar.css';
 
-const toolbar = props => (
+const Toolbar = props => (
   <header className="toolbar">
     <nav className="toolbar__navigation">
-      <div>
-        <ToggleButton />
+      <div className="toolbar_toggle-button">
+        <ToggleButton click={props.sideDrawer} />
       </div>
-      <div className="toolbar__avatar"><a href="/">Jot.It</a></div>
+      <div className="toolbar__avatar"><a href="/todos">Jot.It</a></div>
       <div className="spacer" />
       <div className="toolbar_navigation-items">
       <ul>
@@ -25,6 +25,6 @@ const toolbar = props => (
   </header>
 );
 
-export default toolbar;
+export default Toolbar;
 
     
