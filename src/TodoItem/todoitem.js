@@ -11,7 +11,13 @@ class TodoItem extends React.Component {
         const { todo } = this.props;
 
         return(
-        <div className={'todoItem' + (todo.completed ? ' completed' : '' )} onClick={this.toggleTodo}>{todo.text}</div>
+            <div className={todo.completed ? ' completed' : '' }>
+                <div className={'todoItem'}>
+            <input type="checkbox" checked={todo.completed} onClick={this.toggleTodo}/>
+          <label>{todo.text}</label> 
+          </div>
+          </div>
+
         );
     }
    toggleTodo = () => {
