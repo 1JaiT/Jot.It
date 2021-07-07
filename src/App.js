@@ -1,20 +1,41 @@
 import React, { Component } from 'react';
 import Toolbar from './components/Toolbar/toolbar'
+import SideDrawer from './components/SideDrawer/SideDrawer';
 import ToggleButton from './components/SideDrawer/ToggleButton';
 import TodoList from './Todolist/todolist';
 import AddTodo from './AddTodo/addTodo';
-import avatar from './components/SideDrawer/sage.png';
-
+import Backdrop from './components/Backdrop/Backdrop';
 
 class App extends Component {
+  state = {
+    sideDrawerOpen: false
+  };
+  toggleButtonClickHandler =() => {
+    this.setState((prevState) => {
+      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    });
+  };
+
+  backdropClickHandler =() => {
+    this.setState({sideDrawerOpen: false});
+  };
 
 
   render() {
+    
+    let backdrop;
+
+    if (this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />
+    }
     return(
-    <div className="Jot.It">Jot.It
-     <Toolbar />
+    <div style={{height: '100%'}}>
+     <Toolbar drawerClickHandler={this.toggleButtonClickHandler} />
+     <SideDrawer show={this.state.sideDrawerOpen} />
+     {backdrop}
+
      <ToggleButton />
-     <img src={avatar} alt="sage"></img>
+     
      <main style={{marginTop: '64px'}}>Jot.It ..Just for Writers
       <p>Say aloud: I am confident in my abilities to complete this 
         project because I have all the tools I need within.</p>
